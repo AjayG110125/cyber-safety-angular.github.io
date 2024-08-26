@@ -1,4 +1,4 @@
-/* Make the background div cover the full screen */
+
 .bgImage {
     background-position: center;
     background-repeat: no-repeat;
@@ -12,9 +12,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column; 
 }
 
-/* Ensure the background image covers the entire container */
+
 .displayImage {
     width: 100%;
     height: 100%;
@@ -22,74 +23,35 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 0;
 }
 
-/* Center the content */
-.centerContent {
-    position: relative;
-    /* Needed to position overlay content */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-/* Style the centered image */
-.centeredImage {
-    width: auto;
-    /* Adjust size as needed */
-    height: auto;
-    max-width: 100%;
-    max-height: 100%;
-}
-
-/* Overlay content styling */
-.overlayContent {
-    position: absolute;
-    text-align: center;
-    z-index: 1;
-    /* Ensures content appears above the centered image */
+.top-left-text {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
     color: white;
-    /* Adjust color for contrast with background */
+    font-size: 16px;
+    font-weight: bold;
 }
 
-/* Style the text content */
-.textContent h1 {
-    font-size: 3rem;
-    margin: 0;
+.top-left-text span {
+    font-size: 20px;
+    font-weight: 900;
 }
 
-.textContent h2 {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-}
-
-.textContent p {
-    font-size: 1.2rem;
-    margin: 0.5rem 0 1rem;
-}
-
-/* Style the start button */
-.startButton {
-    background-color: hsl(175 100% 69% / 1);
-    width: 150px;
-    color: #000;
-    border: none;
-    border-radius: 20px;
-    padding: 0.75rem 1.5rem;
-    font-size: 18px;
-    font-weight: 700;
-    cursor: pointer;
-    outline: none;
-}
 
 .top-corner-container {
     position: fixed;
     display: flex;
-    gap: 25px;
+    gap: 15px;
     top: 10px;
     right: 10px;
     text-align: center;
     z-index: 1000;
+    flex-wrap: wrap; 
 }
 
 .top-corner-img {
@@ -99,36 +61,54 @@
 }
 
 .top-corner-text {
-    margin: 0px 0 0;
-    font-size: 16px;
+    margin: 0;
+    font-size: 14px;
     color: #fff;
 }
 
 
-@media (max-width: 768px) {
-    .top-corner-img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .top-corner-text {
-        font-size: 10px;
-    }
-}
-
-.mr-15 {
-    margin-right: 15px !important;
-}
-
-.mb-20{
-    margin-bottom: 20px;
-}
-
-.text-name-area input{
+.video-container {
+    position: relative;
     width: 100%;
-    height: 40px;
-    padding: 10px 20px;
+    height: calc(100vh - 140px);
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+}
+
+.play-pause-button {
+    background: hsl(175, 100%, 69%);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.play-pause-button mat-icon {
+    font-size: 24px;
+    color: #000;
+}
+
 
 .bottom-corner-container {
     position: fixed;
@@ -140,7 +120,6 @@
     z-index: 1000;
 }
 
-
 .bottom-corner-img {
     width: 30px;
     height: 30px;
@@ -148,84 +127,84 @@
 }
 
 .bottom-corner-text {
-    margin: 0px 5px 0;
-    font-size: 16px;
+    margin: 0 5px;
+    font-size: 14px;
     color: #fff;
 }
 
-.bottom-left {
-    display: flex;
-    align-items: center;
-}
-
+.bottom-left,
 .bottom-right {
     display: flex;
     align-items: center;
 }
 
-.top-left-text {
-    position: fixed;
-    top: 10px;
-    left: 10px; 
-    z-index: 1000;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.top-left-text span{
-    font-size: 20px;
-    font-weight: 900;
-}
-
-.video-container {
-    position: relative;
-    width: 100vw;
-    height: calc(100vh - 140px);
-    z-index: 2;
-    overflow: hidden;
-    margin-top: 20px;
-}
-
-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
 
 @media (max-width: 768px) {
+    .top-corner-container,
+    .bottom-corner-container {
+        /* flex-direction: column; */
+        align-items: center;
+        gap: 10px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+
+    .top-corner-img,
+    .bottom-corner-img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .top-corner-text,
+    .bottom-corner-text {
+        font-size: 12px;
+    }
+
     .video-container {
-        height: calc(100vh - 60px);
+        height: calc(100vh - 100px);
         margin-top: 10px;
+    }
+
+    .play-pause-button {
+        padding: 5px;
+    }
+
+    .play-pause-button mat-icon {
+        font-size: 18px;
+    }
+
+    .top-left-text {
+        font-size: 14px;
+    }
+
+    .top-left-text span {
+        font-size: 18px;
     }
 }
 
 
-.video-controls {
-    position: absolute;
-    bottom: 15px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 3; /* Ensure it appears above the video */
+@media (max-width: 480px) {
+    .top-left-text,
+    .bottom-corner-text {
+        font-size: 10px;
+    }
+
+    .top-corner-container {
+        flex-direction: row;
+        justify-content: end;
+        width: 100%;
+        top: 0;
+    }
+
+    .bottom-corner-container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .video-container {
+        /* height: calc(100vh - 80px); */
+        height: auto;
+    }
 }
-
-.play-pause-button {
-    background: hsl(175 100% 69% / 1);
-    border: none;
-    border-radius: 30%;
-    cursor: pointer;
-}
-
-
-
-.play-pause-button mat-icon {
-    width: 60px;
-    text-align: center;
-    height: 30px;
-    font-size: 32px;
-    color: #000;
-}
-
