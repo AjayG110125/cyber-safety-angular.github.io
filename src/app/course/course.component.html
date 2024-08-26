@@ -1,0 +1,45 @@
+<div class="bgImage">
+    <div class="top-left-text">
+        <p><span>Cyber Safety</span> | Introduction To Cyber Safety</p>
+    </div>
+
+    <img src="assets/images/common-bg.jpg" alt="Background Image" class="displayImage">
+
+    <div class="top-corner-container">
+        <div class="img" [routerLink]="['/menu']">
+            <img src="assets/images/menu.svg" alt="Menu Icon" class="top-corner-img">
+            <p class="top-corner-text">Menu</p>
+        </div>
+        <div class="img" (click)="toggleMute()">
+            <img src="assets/images/mute.svg" alt="Mute Icon" class="top-corner-img">
+            <p class="top-corner-text">{{ isMuted ? 'Unmute' : 'Mute' }}</p>
+        </div>
+        <div class="img" [routerLink]="['']">
+            <img src="assets/images/exit.svg" alt="Exit Icon" class="top-corner-img">
+            <p class="top-corner-text">Exit</p>
+        </div>
+    </div>
+
+    <div class="video-container">
+        <video #videoPlayer muted loop>
+            <source src="assets/videos/cyber-safety.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="video-controls">
+            <button (click)="togglePlayPause()" class="play-pause-button">
+                <mat-icon>{{ isPlaying ? 'pause' : 'play_arrow' }}</mat-icon>
+            </button>
+        </div>        
+    </div>
+
+    <div class="bottom-corner-container">
+        <div class="img bottom-left" [routerLink]="['']">
+            <img src="assets/images/back.svg" alt="Back Icon" class="bottom-corner-img">
+            <p class="bottom-corner-text">Back</p>
+        </div>
+        <div class="img bottom-right" [routerLink]="['/yout-policy']">
+            <p class="bottom-corner-text">Next</p>
+            <img src="assets/images/next.svg" alt="Next Icon" class="bottom-corner-img">
+        </div>
+    </div>
+</div>

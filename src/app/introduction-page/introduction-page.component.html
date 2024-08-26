@@ -1,0 +1,46 @@
+<div class="bgImage">
+    <div class="top-left-text">
+        <p><span>Cyber Safety</span> | Introduction</p>
+    </div>
+    <img src="assets/images/common-bg.jpg" alt="Background Image" class="displayImage">
+    <div class="top-corner-container">
+        <div class="img" [routerLink]="['/menu']">
+            <img src="assets/images/menu.svg" alt="Back Icon" class="top-corner-img">
+            <p class="top-corner-text">Menu</p>
+        </div>
+        <div class="img">
+            <img src="assets/images/mute.svg" alt="Back Icon" class="top-corner-img">
+            <p class="top-corner-text">Mute</p>
+        </div>
+        <div class="img">
+            <img src="assets/images/exit.svg" alt="Back Icon" class="top-corner-img">
+            <p class="top-corner-text">Exit</p>
+        </div>
+    </div>
+    <div class="centerContent">
+        <img src="assets/images/panel-1.svg" alt="Centered Image" class="centeredImage">
+        <div class="overlayContent">
+            <div class="textContent">
+                <p>In this course, we'd like to use your name <br>(you can make up a name if you prefer). <br>Please
+                    enter it here:</p>
+            </div>
+            <div class="text-name-area">
+                <input type="text" placeholder="Enter Your Name" class="mb-20" [(ngModel)]="InputValue">
+                <ng-container *ngIf="showValidation && !InputValue">
+                    <p class="validation-error">Please Enter Your Name</p>
+                </ng-container>
+            </div>
+            <button class="startButton text-center" (click)="routeTo()">Submit</button>
+        </div>
+    </div>
+    <div class="bottom-corner-container">
+        <div class="img bottom-left" [routerLink]="['']">
+            <img src="assets/images/back.svg" alt="Back Icon" class="bottom-corner-img">
+            <p class="bottom-corner-text">Back</p>
+        </div>
+        <div class="img bottom-right" [routerLink]="['/yout-policy']">
+            <p class="bottom-corner-text">Next</p>
+            <img src="assets/images/next.svg" alt="Next Icon" class="bottom-corner-img">
+        </div>
+    </div>
+</div>

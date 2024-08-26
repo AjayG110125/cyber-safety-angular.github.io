@@ -1,0 +1,42 @@
+<div class="bgImage">
+    <img src="assets/images/menu-bg.jpg" alt="Background Image" class="displayImage">
+   
+    <div class="top-corner-container">
+      <div class="img">
+        <img src="assets/images/mute.svg" alt="Mute Icon" class="top-corner-img">
+        <p class="top-corner-text">Mute</p>
+      </div>
+      <div class="img">
+        <img src="assets/images/exit.svg" alt="Exit Icon" class="top-corner-img">
+        <p class="top-corner-text">Exit</p>
+      </div>
+    </div>
+   
+    <div class="centerContent">
+      <img src="assets/images/menu-panel.png" alt="Centered Image" class="centeredImage">
+   
+      <!-- Add your content here -->
+      <div class="menu-content">
+        <h1>Menu</h1>
+        <p class="mb-50">Select the first topic to begin.</p>
+        <ul>
+          <li [routerLink]="['/course']"><button>1. Introduction to cyber safety <i class="fas fa-chevron-right arrow-icon"></i></button></li>
+          <li [routerLink]="['/underconstraction']"><button>2. Passwords<i class="fas fa-chevron-right arrow-icon"></i></button></li>
+          <li [routerLink]="['/underconstraction']"><button>3. Socially engineered attacks<i class="fas fa-chevron-right arrow-icon"></i></button></li>
+          <li [routerLink]="['/underconstraction']"><button>4. Data security risks<i class="fas fa-chevron-right arrow-icon"></i></button></li>
+          <li [routerLink]="['/underconstraction']"><button>5. Your responsibilities<i class="fas fa-chevron-right arrow-icon"></i></button></li>
+          <li [routerLink]="['/underconstraction']"><button>6. More information<i class="fas fa-chevron-right arrow-icon"></i></button></li>
+        </ul>
+      </div>
+      <div class="bottom-corner-container">
+        <div class="img bottom-left" [routerLink]="['']">
+            <img src="assets/images/back.svg" alt="Back Icon" class="bottom-corner-img">
+            <p class="bottom-corner-text">Back</p>
+        </div>
+        <div class="img bottom-right" [routerLink]="['/yout-policy']">
+            <p class="bottom-corner-text">Next</p>
+            <img src="assets/images/next.svg" alt="Next Icon" class="bottom-corner-img">
+        </div>
+    </div>
+    </div>
+  </div>

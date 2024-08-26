@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bgImage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the background image covers the entire container */
+.displayImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Center the content */
+.centerContent {
+    position: relative;
+    /* Needed to position overlay content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the centered image */
+.centeredImage {
+    width: auto;
+    /* Adjust size as needed */
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Overlay content styling */
+.overlayContent {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    /* Ensures content appears above the centered image */
+    color: white;
+    /* Adjust color for contrast with background */
+}
+
+/* Style the text content */
+.textContent h1 {
+    font-size: 3rem;
+    margin: 20px 0px;
+}
+
+.textContent h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.textContent p {
+    font-size: 1.2rem;
+    margin: 20px 0 10px;
+}
+
+.startButton {
+    background-color: hsl(175 100% 69% / 1);
+    margin-top: 20px;
+    width: 150px;
+    color: #000;
+    border-radius: 20px;
+    padding: 0.75rem 1.5rem;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.top-corner-container {
+    position: fixed;
+    display: flex;
+    gap: 25px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.top-corner-img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.top-corner-text {
+    margin: 5px 0 0;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* Optional: Add hover effects */
+.top-corner-container:hover .top-corner-text {
+    color: #555;
+    /* Change text color on hover */
+}
+
+@media (max-width: 768px) {
+    .top-corner-img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .top-corner-text {
+        font-size: 10px;
+    }
+}
+
+.mr-15 {
+    margin-right: 15px !important;
+}

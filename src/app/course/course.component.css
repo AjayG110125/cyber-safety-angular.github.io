@@ -1,0 +1,231 @@
+/* Make the background div cover the full screen */
+.bgImage {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ensure the background image covers the entire container */
+.displayImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Center the content */
+.centerContent {
+    position: relative;
+    /* Needed to position overlay content */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Style the centered image */
+.centeredImage {
+    width: auto;
+    /* Adjust size as needed */
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Overlay content styling */
+.overlayContent {
+    position: absolute;
+    text-align: center;
+    z-index: 1;
+    /* Ensures content appears above the centered image */
+    color: white;
+    /* Adjust color for contrast with background */
+}
+
+/* Style the text content */
+.textContent h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.textContent h2 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+}
+
+.textContent p {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 1rem;
+}
+
+/* Style the start button */
+.startButton {
+    background-color: hsl(175 100% 69% / 1);
+    width: 150px;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 0.75rem 1.5rem;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
+
+.top-corner-container {
+    position: fixed;
+    display: flex;
+    gap: 25px;
+    top: 10px;
+    right: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+.top-corner-img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.top-corner-text {
+    margin: 0px 0 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .top-corner-img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .top-corner-text {
+        font-size: 10px;
+    }
+}
+
+.mr-15 {
+    margin-right: 15px !important;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}
+
+.text-name-area input{
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+}
+
+.bottom-corner-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    z-index: 1000;
+}
+
+
+.bottom-corner-img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.bottom-corner-text {
+    margin: 0px 5px 0;
+    font-size: 16px;
+    color: #fff;
+}
+
+.bottom-left {
+    display: flex;
+    align-items: center;
+}
+
+.bottom-right {
+    display: flex;
+    align-items: center;
+}
+
+.top-left-text {
+    position: fixed;
+    top: 10px;
+    left: 10px; 
+    z-index: 1000;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.top-left-text span{
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.video-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 140px);
+    z-index: 2;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        height: calc(100vh - 60px);
+        margin-top: 10px;
+    }
+}
+
+
+.video-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3; /* Ensure it appears above the video */
+}
+
+.play-pause-button {
+    background: hsl(175 100% 69% / 1);
+    border: none;
+    border-radius: 30%;
+    cursor: pointer;
+}
+
+
+
+.play-pause-button mat-icon {
+    width: 60px;
+    text-align: center;
+    height: 30px;
+    font-size: 32px;
+    color: #000;
+}
+
