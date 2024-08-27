@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* General styling */
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -36,12 +35,21 @@ body {
 }
 
 .centeredImage {
+    display: none;
     width: auto;
     height: auto;
     max-width: 100%;
     max-height: 100%;
 }
 
+.centeredImageformobile {
+    display: none;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    z-index: 999;
+}
 
 .overlayContent {
     position: absolute;
@@ -50,24 +58,13 @@ body {
     color: white;
 }
 
-.textContent h1 {
-    font-size: 3rem;
-    margin: 0;
-}
-
-.textContent h2 {
-    font-size: 2rem;
-    margin: 0.5rem 0;
-}
-
 .textContent p {
     font-size: 1.2rem;
     margin: 0.5rem 0 1rem;
 }
 
-/* Style the start button */
 .startButton {
-    background-color: hsl(175 100% 69% / 1);
+    background-color: hsl(175, 100%, 69%);
     width: 150px;
     color: #000;
     border: none;
@@ -79,113 +76,128 @@ body {
     outline: none;
 }
 
-.top-corner-container {
+.top-corner-container,
+.bottom-corner-container {
     position: fixed;
     display: flex;
     gap: 25px;
-    top: 10px;
-    right: 10px;
     text-align: center;
     z-index: 1000;
 }
 
-.top-corner-img {
-    width: 30px;
-    height: 30px;
-    cursor: pointer;
-}
-
-.top-corner-text {
-    margin: 0px 0 0;
-    font-size: 16px;
-    color: #fff;
-}
-
-
-@media (max-width: 768px) {
-    .top-corner-img {
-        width: 25px;
-        height: 25px;
-    }
-
-    .top-corner-text {
-        font-size: 10px;
-    }
-}
-
-.mr-15 {
-    margin-right: 15px !important;
-}
-
-.mb-20{
-    margin-bottom: 20px;
-}
-
-.text-name-area input{
-    width: 100%;
-    height: 40px;
-    padding: 10px 20px;
+.top-corner-container {
+    top: 10px;
+    right: 10px;
 }
 
 .bottom-corner-container {
-    position: fixed;
     bottom: 0;
     width: 100%;
-    display: flex;
     justify-content: space-between;
     padding: 10px;
-    z-index: 1000;
 }
 
-
+.top-corner-img,
 .bottom-corner-img {
     width: 30px;
     height: 30px;
     cursor: pointer;
 }
 
+.top-corner-text,
 .bottom-corner-text {
-    margin: 0px 5px 0;
     font-size: 16px;
     color: #fff;
-}
-
-.bottom-left {
-    display: flex;
-    align-items: center;
-}
-
-.bottom-right {
-    display: flex;
-    align-items: center;
 }
 
 .top-left-text {
     position: fixed;
     top: 10px;
-    left: 10px; 
+    left: 10px;
     z-index: 1000;
     color: white;
     font-size: 16px;
     font-weight: bold;
 }
 
-.top-left-text span{
+.top-left-text span {
     font-size: 20px;
     font-weight: 900;
 }
 
+.text-name-area input {
+    width: 100%;
+    height: 40px;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.validation-error {
+    font-size: 12px;
+    color: #f44336;
+}
+
+/* Responsive design */
+@media (min-width: 769px) {
+    .centeredImage {
+        display: block;
+    }
+
+    .centeredImageformobile {
+        display: none;
+    }
+}
+
 @media (max-width: 768px) {
+    .centeredImageformobile {
+        display: block !important;
+        width: 100%;
+        height: auto;
+    }
+
+    .centeredImage {
+        display: none !important;
+    }
+
+    .top-corner-img,
     .bottom-corner-img {
         width: 25px;
         height: 25px;
     }
+
+    .top-corner-text,
     .bottom-corner-text {
         font-size: 10px;
     }
+
+    .overlayContent {
+        position: absolute;
+        text-align: center;
+        z-index: 999;
+        color: white;
+    }
+
+    .text-name-area input{
+        width: 80%;
+    }
 }
-.validation-error {
-    font-size: 12px;
-    color: #f44336; /* This is the red color used by Angular Material errors */
-  }
-  
+
+@media (max-width: 480px) {
+    .centeredImageformobile {
+        display: block;
+    }
+
+    .centeredImage {
+        display: none;
+    }
+}
+
+@media (max-width: 320px) {
+    .centeredImageformobile {
+        display: block;
+    }
+
+    .centeredImage {
+        display: none;
+    }
+}
